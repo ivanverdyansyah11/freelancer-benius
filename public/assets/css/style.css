@@ -150,7 +150,14 @@ main.authentication .logo-brand {
 
 main.authentication .banner-login,
 main.authentication .banner-register {
-    width: 100%;
+    background-image: url('../images/banners/banner-login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main.authentication .banner-register {
+    background-image: url('../images/banners/banner-register.jpg');
 }
 
 main.authentication .title {
@@ -218,6 +225,11 @@ main.authentication .link-redirect a:hover:before {
 }
 
 @media (max-width: 575.98px) {
+    main.authentication {
+        min-height: 100vh;
+        height: fit-content;
+    }
+
     main.authentication .content-authentication {
         padding: 32px;
     }
