@@ -1,3 +1,4 @@
+/* FONTFACE */
 @font-face {
     font-family: 'urbanist-regular';
     src: url('../font/urbanist/Urbanist-Regular.ttf') format('truetype');
@@ -22,7 +23,10 @@
     font-family: 'urbanist-extrabold';
     src: url('../font/urbanist/Urbanist-ExtraBold.ttf') format('truetype');
 }
+/* END FONTFACE */
 
+
+/* VARIABLE */
 :root {
     --dark-color: 48, 48, 48;
     --light-color: 255, 255, 255;
@@ -36,10 +40,94 @@
 
     --border-style: 1px solid rgba(48, 48, 48, 0.12);
 }
+/* END VARIABLE */
 
+
+/* COMPONENT */
 body {
     overflow-x: hidden;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin-bottom: 0;
+    line-height: 150% !important;
+}
+
+a {
+    color: rgba(var(--primary-color), 1);
+    text-decoration: none;
+    display: inline-block;
+}
+
+* {
+    font-family: var(--medium-font);
+    color: rgba(var(--dark-color), 1);
+    transition: 300ms !important;
+}
+
+form {
+    width: 100%;
+    gap: 10px;
+}
+
+form .input-group,
+form .input-group > input {
+    position: relative;
+}
+
+form .input-group > input {
+    padding: 16px 16px 16px 63px;
+    background-color: rgba(var(--light-color), 1);
+    border: var(--border-style);
+    stroke: none;
+    outline: none;
+    border-radius: 4px !important;
+    width: 100%;
+    font-size: 0.875rem;
+    color: rgba(var(--dark-color), 0.52);
+}
+
+form .input-group > input::placeholder {
+    font-size: 0.875rem;
+    color: rgba(var(--dark-color), 0.52);
+}
+
+form .input-group > input:hover,
+form .input-group > input:focus,
+form .input-group > input:not(:placeholder-shown) {
+    border: var(--border-style);
+    border-color: rgba(var(--dark-color), 0.32);
+}
+
+form .input-group > label .line {
+    width: 1px;
+    height: 26px;
+    background-color: rgba(var(--dark-color), 0.12);
+}
+
+form .input-group > label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    gap: 16px;
+}
+
+form .input-group > label span {
+    font-size: 0.875rem;
+    color: rgba(var(--dark-color), 0.52);
+}
+
+form .input-group input:not(:placeholder-shown) ~ label > span {
+    display: none;
+}
+/* END COMPONENT */
+
 
 /* AUTHENTICATION */
 main.authentication {
@@ -47,7 +135,95 @@ main.authentication {
     overflow-y: hidden;
 }
 
-.banner-login {
+main.authentication .wrapper-style {
+    background-image: url('../images/randoms/style-authentication.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main.authentication .logo-brand {
+    position: absolute;
+    top: 32px;
+    left: 100px;
+}
+
+main.authentication .banner-login,
+main.authentication .banner-register {
+    width: 100%;
+}
+
+main.authentication .title {
+    font-size: 4rem;
+    font-family: var(--extrabold-font);
+    margin-bottom: 32px;
+}
+
+main.authentication .content-authentication {
+    padding: 32px 100px;
+    width: 100%;
+}
+
+main.authentication .button-primary {
+    padding: 13px 16px;
+    background-color: rgba(var(--primary-color), 1);
+    border-radius: 4px !important;
+    border: none;
+    outline: none;
+    stroke: none;
+    gap: 6px;
+}
+
+main.authentication .button-primary span {
+    font-size: 0.938rem;
+    color: rgba(var(--light-color), 1);
+}
+
+main.authentication .button-primary:hover {
+    filter: contrast(130%);
+}
+
+main.authentication .link-redirect {
+    font-size: 0.938rem;
+    color: rgba(var(--dark-color), 0.52);
+    margin-top: 62px;
+}
+
+main.authentication .link-redirect a {
+    position: relative;
+}
+
+main.authentication .link-redirect a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: rgba(var(--primary-color), 1);
+    bottom: 0;
+    left: 0;
+    transition: 300ms;
+}
+
+main.authentication .link-redirect a:hover:before {
     width: 100%;
 }
 /* END AUTHENTICATION */
+
+
+/* RESPONSIVE */
+@media (max-width: 1199.98px) {
+    main.authentication .title {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    main.authentication .content-authentication {
+        padding: 32px;
+    }
+
+    main.authentication .logo-brand {
+        left: 32px;
+    }
+}
+/* END RESPONSIVE */
