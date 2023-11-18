@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'urbanist-regular';
+    src: url('../font/urbanist/Urbanist-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'urbanist-medium';
+    src: url('../font/urbanist/Urbanist-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'urbanist-semibold';
+    src: url('../font/urbanist/Urbanist-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'urbanist-bold';
+    src: url('../font/urbanist/Urbanist-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'urbanist-extrabold';
+    src: url('../font/urbanist/Urbanist-ExtraBold.ttf') format('truetype');
+}
+
+:root {
+    --dark-color: 48, 48, 48;
+    --light-color: 255, 255, 255;
+    --primary-color: 70, 110, 231;
+
+    --regular-font: 'urbanist-regular', Arial, Helvetica, sans-serif;
+    --medium-font: 'urbanist-medium', Arial, Helvetica, sans-serif;
+    --semibold-font: 'urbanist-semibold', Arial, Helvetica, sans-serif;
+    --bold-font: 'urbanist-bold', Arial, Helvetica, sans-serif;
+    --extrabold-font: 'urbanist-extrabold', Arial, Helvetica, sans-serif;
+
+    --border-style: 1px solid rgba(48, 48, 48, 0.12);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* AUTHENTICATION */
+main.authentication {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.banner-login {
+    width: 100%;
+}
+/* END AUTHENTICATION */
