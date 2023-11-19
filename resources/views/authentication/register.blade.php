@@ -83,8 +83,20 @@
                         <p class="link-redirect">Already have an account? <a href="{{ route('login.index') }}">Login account</a></p>
                     </div>
                 </div>
-                <div class="col-6 p-0 d-none d-lg-inline-block banner-register"></div>
+                <div class="col-6 p-0 d-none d-lg-inline-block banner banner-register"></div>
             </div>
         </div>
     </main>
 @endsection
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            $(".title").addClass('active-transition');
+            $(".form").addClass('active-transition');
+            $(".button-primary").addClass('active-transition');
+            $(".link-redirect").addClass('active-transition');
+            $(".banner").addClass('active-transition');
+        });
+    </script>
+@endpush

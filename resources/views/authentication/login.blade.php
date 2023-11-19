@@ -4,10 +4,10 @@
     <main class="authentication">
         <div class="container-fluid position-relative" style="height: 100%;">
             <div class="row" style="height: 100%;">
-                <div class="col-lg-6 p-0 d-flex align-items-center position-relative wrapper-style">
-                    <a class="logo-brand">
+                <div class="col p-0 d-flex align-items-center position-relative wrapper-style">
+                    {{-- <a class="logo-brand">
                         <img src="{{ asset('assets/images/brand/logo-brand.svg') }}" alt="Logo Brand" class="img-fluid">
-                    </a>
+                    </a> --}}
                     <div class="content-authentication">
                         <h1 class="title">Login</h1>
                         <form class="form">
@@ -43,8 +43,20 @@
                         <p class="link-redirect">Don't have an account? <a href="{{ route('register.index') }}">Register for Free</a></p>
                     </div>
                 </div>
-                <div class="col-6 p-0 banner-login"></div>
+                <div class="col-6 p-0 d-none d-lg-inline-block banner banner-login"></div>
             </div>
         </div>
     </main>
 @endsection
+
+@push('js')
+    <script>
+        $(document).ready(function() {
+            $(".title").addClass('active-transition');
+            $(".form").addClass('active-transition');
+            $(".button-primary").addClass('active-transition');
+            $(".link-redirect").addClass('active-transition');
+            $(".banner").addClass('active-transition');
+        });
+    </script>
+@endpush

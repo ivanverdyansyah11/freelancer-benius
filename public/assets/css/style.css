@@ -217,6 +217,73 @@ main.authentication .link-redirect a:hover:before {
 /* END AUTHENTICATION */
 
 
+/* TRANSITION */
+main.authentication .title,
+main.authentication .form,
+main.authentication .button-primary,
+main.authentication .link-redirect {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 700ms !important;
+}
+
+main.authentication .banner {
+    filter: saturate(0);
+}
+
+main.authentication .banner.active-transition {
+    animation-name: transitionSaturate;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+main.authentication .title.active-transition,
+main.authentication .form.active-transition,
+main.authentication .button-primary.active-transition,
+main.authentication .link-redirect.active-transition {
+    animation-name: transitionMoveToTop;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+
+main.authentication .form.active-transition {
+    animation-delay: 0.25s;
+}
+
+main.authentication .button-primary.active-transition {
+    animation-delay: 0.5s;
+}
+
+main.authentication .link-redirect.active-transition {
+    animation-delay: 0.75s;
+}
+
+main.authentication .banner.active-transition {
+    animation-delay: 1.5s;
+}
+
+@keyframes transitionMoveToTop {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+@keyframes transitionSaturate {
+    from {
+        filter: saturate(0);
+    }
+    to {
+        filter: saturate(100%);
+    }
+}
+/* END TRANSITION */
+
+
 /* RESPONSIVE */
 @media (max-width: 1199.98px) {
     main.authentication .title {
